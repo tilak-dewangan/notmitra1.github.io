@@ -1,0 +1,27 @@
+views/chat/index.php
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat - NoteMitra</title>
+    <link rel="stylesheet" href="/assets/css/chat.css">
+    <script src="/assets/js/chat.js" defer></script>
+</head>
+<body>
+    <?php include '../partials/header.php'; ?>
+    
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will be dynamically loaded here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message" placeholder="Type your message here...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <?php include '../partials/footer.php'; ?>
+</body>
+</html>

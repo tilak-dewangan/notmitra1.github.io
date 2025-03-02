@@ -1,0 +1,39 @@
+views/job/index.php
+
+<?php
+// Job Section View
+
+// Include header
+include_once '../partials/header.php';
+?>
+
+<div class="container">
+    <h1>Career and Job Opportunities</h1>
+    
+    <div class="job-search">
+        <input type="text" placeholder="Search for jobs..." id="job-search-input">
+        <button id="job-search-button">Search</button>
+    </div>
+
+    <div class="job-listings">
+        <h2>Available Jobs</h2>
+        <ul id="job-list">
+            <!-- Job listings will be dynamically populated here -->
+        </ul>
+    </div>
+
+    <div class="job-posting">
+        <h2>Post a Job</h2>
+        <form id="job-post-form">
+            <input type="text" name="job_title" placeholder="Job Title" required>
+            <textarea name="job_description" placeholder="Job Description" required></textarea>
+            <input type="text" name="company_name" placeholder="Company Name" required>
+            <button type="submit">Post Job</button>
+        </form>
+    </div>
+</div>
+
+<?php
+// Include footer
+include_once '../partials/footer.php';
+?>

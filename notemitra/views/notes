@@ -1,0 +1,41 @@
+views/notes/index.php
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Upload and Download</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <?php include '../partials/header.php'; ?>
+    <?php include '../partials/sidebar.php'; ?>
+
+    <div class="container">
+        <h1>Upload and Download Notes</h1>
+        
+        <form action="/notes/upload" method="POST" enctype="multipart/form-data">
+            <label for="noteTitle">Note Title:</label>
+            <input type="text" id="noteTitle" name="noteTitle" required>
+
+            <label for="noteFile">Upload Note (PDF, Image, Text):</label>
+            <input type="file" id="noteFile" name="noteFile" accept=".pdf, .jpg, .jpeg, .png, .txt" required>
+
+            <button type="submit">Upload Note</button>
+        </form>
+
+        <h2>Available Notes</h2>
+        <ul>
+            <?php foreach ($notes as $note): ?>
+                <li>
+                    <a href="/uploads/notes/<?php echo $note['file_name']; ?>" download><?php echo $note['title']; ?></a>
+                    <span> - <?php echo $note['uploaded_at']; ?></span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <?php include '../partials/footer.php'; ?>
+</body>
+</html>

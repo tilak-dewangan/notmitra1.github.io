@@ -1,0 +1,43 @@
+<?php
+// video/index.php
+
+// इस फ़ाइल में वीडियो सामग्री के लिए दृश्य टेम्पलेट्स होंगे
+
+// वीडियो लिस्टिंग के लिए टेम्पलेट
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शॉर्ट स्टडी वीडियोज़</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <?php include '../partials/header.php'; ?>
+    <?php include '../partials/sidebar.php'; ?>
+
+    <div class="container">
+        <h1>शॉर्ट स्टडी वीडियोज़</h1>
+        <div class="video-list">
+            <!-- वीडियो लिस्टिंग के लिए यहाँ कोड होगा -->
+            <?php foreach ($videos as $video): ?>
+                <div class="video-item">
+                    <h2><?php echo $video['title']; ?></h2>
+                    <video controls>
+                        <source src="/uploads/reels/<?php echo $video['file_name']; ?>" type="video/mp4">
+                        आपका ब्राउज़र वीडियो टैग का समर्थन नहीं करता।
+                    </video>
+                    <p><?php echo $video['description']; ?></p>
+                    <button>लाइक</button>
+                    <button>कमेंट</button>
+                    <button>शेयर</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <?php include '../partials/footer.php'; ?>
+</body>
+</html>
